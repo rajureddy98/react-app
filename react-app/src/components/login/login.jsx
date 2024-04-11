@@ -9,9 +9,10 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('/api/login', { email, password });
+      const response = await axios.post('https://reqres.in/api/login', { email, password });
       // Assuming your backend sends back a token upon successful login
       const token = response.data.token;
+      console.log(response.data.token);
       // You can then store the token in localStorage or sessionStorage
       localStorage.setItem('token', token);
       // Redirect the user or do something else upon successful login
